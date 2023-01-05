@@ -1,11 +1,11 @@
-package testBase;
+package assignmentWeek17.Base;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
+import assignmentWeek18.Browser.Browsers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -13,21 +13,22 @@ public class TestBase {
 	// making web driver static, once changed it remain same
 	public static WebDriver driver;
 
+	// import enum class and select browser want to use
+	public Browsers DEFAULT_BROWSER = Browsers.GOOGLE_CHROME;
+
 	// to launch browser
 	public void launchBrowser() {
-
-		String browserForTesting = "chrome";
 		// switch case to choose the web browser
-		switch (browserForTesting.toLowerCase()) {
-//		case "firefox":
-//			WebDriverManager.firefoxdriver().setup();
-//			driver = new FirefoxDriver();
-//			break;
-		case "edge":
+		switch (DEFAULT_BROWSER) {
+		case FIREFOX:
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			break;
+		case EDGE:
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			break;
-		case "chrome":
+		case GOOGLE_CHROME:
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;

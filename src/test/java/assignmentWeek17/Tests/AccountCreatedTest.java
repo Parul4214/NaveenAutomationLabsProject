@@ -1,14 +1,15 @@
-package tests;
+package assignmentWeek17.Tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import testBase.TestBase;
-import testPages.AccountCreatedPage;
-import testPages.AccountLogin;
-import testPages.RegisterPage;
-import testPages.YourStorePage;
+
+import assignmentWeek17.Base.TestBase;
+import assignmentWeek17.Pages.AccountCreatedPage;
+import assignmentWeek17.Pages.AccountLogin;
+import assignmentWeek17.Pages.RegisterPage;
+import assignmentWeek17.Pages.YourStorePage;
 
 public class AccountCreatedTest extends TestBase {
 
