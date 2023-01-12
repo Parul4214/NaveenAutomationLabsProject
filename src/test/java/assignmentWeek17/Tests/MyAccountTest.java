@@ -24,14 +24,14 @@ public class MyAccountTest extends TestBase {
 		launchBrowser();
 		sf = new SoftAssert();
 		yourStorePage = new YourStorePage();
-		yourStorePage.clickLoginBtn();
-		AccountLogin accountLogin = new AccountLogin();
-		accountLogin.loginWithValidCred();
 
 	}
 
 	@Test
-	public void verifyUserIsAbleToChangePhoneNum() {
+	public void verifyUserIsAbleToChangePhoneNum(String username, String password) {
+		yourStorePage.clickLoginBtn();
+		AccountLogin accountLogin = new AccountLogin();
+		accountLogin.loginWithValidCred("parul.verma421@gmail.com", "#elloWorld");
 		MyAccountInformation myAccountInfo = new MyAccountInformation();
 		myAccountPage = myAccountInfo.editAccountInfo();
 		sf.assertEquals(myAccountPage.getSuccessMsgFromAlertBanner(),

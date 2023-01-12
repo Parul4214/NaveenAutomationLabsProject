@@ -23,8 +23,8 @@ public class MyWishList extends TestBase {
 	@FindBy(css = "div.alert-success")
 	WebElement successtextAfterDeleting;
 	
-	public void deleteLastItem() {
-		deleteLastItemFromWishlist.click();
+	public void deleteItem(String prodctName, myWishList column, By locator) {
+		getElementFromTheTable(prodctName, column).findElement(locator).click();
 	}
 
 	public MyAccountPage clickcontinueAfterRemovingItem() {

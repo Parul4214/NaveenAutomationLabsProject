@@ -1,4 +1,4 @@
-package assignmentWeek17.Pages;
+package assignmentWeek19.Pages;
 
 import java.util.Random;
 
@@ -39,6 +39,7 @@ public class MyAccountInformation extends TestBase {
 	public MyAccountPage editAccountInfo() {
 		myAccount.click();
 		editAccInfo.click();
+		
 		phoneInput.clear();
 		phoneInput.sendKeys(randomPhoneNum());
 		clickcontinueAfterPhoneChange.click();

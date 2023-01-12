@@ -1,10 +1,11 @@
-package assignmentWeek17.Pages;
+package assignmentWeek18.Browser;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import assignmentWeek17.Base.TestBase;
+import assignmentWeek17.Pages.MyAccountPage;
 
 public class AccountLogin extends TestBase {
 	public AccountLogin() {

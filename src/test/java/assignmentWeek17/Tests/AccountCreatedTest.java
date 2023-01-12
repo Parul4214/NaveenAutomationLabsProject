@@ -41,7 +41,7 @@ public class AccountCreatedTest extends TestBase {
 	public void verifyUserIsAbleToAccountLogin() {
 		// page chaining
 		AccountLogin accountLogin = yourStorePage.clickLoginBtn();
-		accountLogin.loginWithValidCred();
+		accountLogin.loginWithValidCred("parul.verma421@gmail.com", "#elloWorld");
 		sf.assertEquals(driver.getTitle(), "My Account", "No match for E-Mail Address and/or Password");
 		System.out.println("Login successful. My Account");
 

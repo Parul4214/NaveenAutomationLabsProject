@@ -5,7 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
 import assignmentWeek18.Browser.Browsers;
+import assignmentWeek19.Listeners.WebDriverEvent;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -15,6 +18,10 @@ public class TestBase {
 
 	// import enum class and select browser want to use
 	public Browsers DEFAULT_BROWSER = Browsers.GOOGLE_CHROME;
+
+	// get instance of class webdriver events
+	public static WebDriverEvent events;
+	public EventFiringWebDriver eventFiringWebDriver;
 
 	// to launch browser
 	public void launchBrowser() {
@@ -37,6 +44,11 @@ public class TestBase {
 			System.out.println("Invalid Web Browser");
 			break;
 		}
+
+		eventFiringWebDriver = new EventFiringWebDriver(driver);
+		events = new WebDriverEvent();
+		eventFiringWebDriver.register(events);
+		driver = eventFiringWebDriver;
 		// to manage time
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// to maximize window size
