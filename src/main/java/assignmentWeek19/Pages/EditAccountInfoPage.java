@@ -29,19 +29,19 @@ public class EditAccountInfoPage extends TestBase {
 	WebElement clickcontinue;
 
 	public String editFirstName() {
-		return firstName.getAttribute("firstname");
+		return firstName.getText();
 	}
 
 	public String editLastName() {
-		return firstName.getAttribute("lastname");
+		return firstName.getText();
 	}
 
 	public String editEmail() {
-		return firstName.getAttribute("email");
+		return firstName.getText();
 	}
 
 	public String editPhone() {
-		return firstName.getAttribute("phone");
+		return firstName.getText();
 	}
 
 //	public MyAccountPage editAccountInfo(String fName, String lName, String email, String phnInput) {

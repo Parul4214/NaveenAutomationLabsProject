@@ -39,7 +39,7 @@ public class AssignmentWeek19Test extends TestBase {
 //
 //	}
 
-	@Test(dataProvider = "LoginDataProvider", priority = 1)
+	@Test(dataProvider = "LoginDataProvider")
 	public void verifyUserIsAbleToAccountLogin(String username, String password) {
 		// page chaining
 		AccountLogin accountLogin = yourStorePage.clickLoginBtn();
@@ -49,8 +49,9 @@ public class AssignmentWeek19Test extends TestBase {
 
 	}
 
-	@Test(dataProvider = "EditInformationDataprovider", priority = 2)
-	public void validateInformationIsPrefilled(String username, String password,String firstName, String lastName, String email, String phnInput) {
+	@Test(dataProvider = "EditInformationDataprovider")
+	public void validateInformationIsPrefilled(String username, String password, String firstName, String lastName,
+			String email, String phnInput) {
 		AccountLogin accountLogin = yourStorePage.clickLoginBtn();
 		accountLogin.loginWithValidCred(username, password);
 		EditAccountInfoPage editAccountInfo = myAccountPage.clickOnEditAccountInfo();
@@ -58,6 +59,7 @@ public class AssignmentWeek19Test extends TestBase {
 		sf.assertEquals(editAccountInfo.editLastName(), lastName, "Last name is not filled yet");
 		sf.assertEquals(editAccountInfo.editEmail(), email, "Email is not filled yet");
 		sf.assertEquals(editAccountInfo.editPhone(), phnInput, "Phone Num is not filled yet");
+		sf.assertAll();
 
 	}
 
